@@ -17,6 +17,7 @@ return {
       -- tsserver will be automatically installed with mason and loaded with lspconfig
       tsserver = {},
       pyright = {},
+      clangd = {},
       tailwindcss = { filetypes_exclude = { "markdown" } },
     },
     -- you can do any additional lsp server setup here
