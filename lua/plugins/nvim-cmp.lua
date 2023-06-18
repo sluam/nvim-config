@@ -17,6 +17,8 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -24,8 +26,6 @@ return {
       end
 
       local luasnip = require("luasnip")
-      local cmp = require("cmp")
-
       -- This is reaaaally not easy to setup :D
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
