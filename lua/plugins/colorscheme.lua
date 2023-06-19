@@ -23,7 +23,6 @@ return {
       },
       navic = { enabled = true },
       neotest = true,
-      dashboard = true,
       noice = true,
       notify = true,
       nvimtree = true,
