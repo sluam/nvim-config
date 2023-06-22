@@ -1,3 +1,3 @@
 # 💤 Skipper
 
-Mi configuracion personal de neovim
+Mi confiuracion personal de neovim
