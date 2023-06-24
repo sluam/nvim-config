@@ -19,25 +19,15 @@ return {
       emmet_ls = {},
       pyright = {},
       clangd = {},
-      tailwindcss = { filetypes_exclude = { "markdown" } },
+      intelephense = {},
+      tailwindcss = {},
     },
     -- you can do any additional lsp server setup here
     -- return true if you don't want this server to be setup with lspconfig
     ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-    setup = {
-      -- example to setup with typescript.nvim
-      tsserver = function(_, opts)
-        require("typescript").setup({ server = opts })
-        return true
-      end,
 
-      tailwindcss = function(_, opts)
-        local tw = require("lspconfig.server_configurations.tailwindcss")
-        --- @param ft string
-        opts.filetypes = vim.tbl_filter(function(ft)
-          return not vim.tbl_contains(opts or {}, ft)
-        end, tw.default_config.filetypes)
-      end,
+    setup = {
+      ["*"] = function(server, opts) end,
       -- Specify * to use this function as a fallback for any server
       -- ["*"] = function(server, opts) end,
     },
